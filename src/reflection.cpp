@@ -419,8 +419,8 @@ Offset<const Table *> CopyTable(FlatBufferBuilder &fbb,
               offset = fbb.CreateVector(elements).o;
               break;
             }
-            // FALL-THRU:
           }
+          // FALL-THRU
           default: {  // Scalars and structs.
             auto element_size = GetTypeSize(element_base_type);
             if (elemobjectdef && elemobjectdef->is_struct())
@@ -457,8 +457,8 @@ Offset<const Table *> CopyTable(FlatBufferBuilder &fbb,
                      subobjectdef.bytesize());
           break;
         }
-        // else: FALL-THRU:
       }
+      // ELSE FALL-THRU
       case reflection::Union:
       case reflection::String:
       case reflection::Vector:
